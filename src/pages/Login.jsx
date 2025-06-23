@@ -16,10 +16,30 @@ const Login = () => {
     setError("");
 
     try {
-      await login(username, password);
-      navigate("/");
+      // Gunakan api service yang sudah dikonfigurasi
+      const response = await api.post("/login", { username, password });
+
+      if (response.data.token) {
+        login(response.data.token);
+        navigate("/");
+        toast.success("Login berhasil!");
+      } else {
+        throw new Error("Token tidak diterima dari server");
+      }
     } catch (err) {
-      setError("Username atau password salah");
+      console.error("Login error:", err);
+
+      let errorMessage = "Username atau password salah";
+      if (err.response) {
+        if (err.response.status === 404) {
+          errorMessage = "Endpoint API tidak ditemukan";
+        } else if (err.response.data?.error) {
+          errorMessage = err.response.data.error;
+        }
+      }
+
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
