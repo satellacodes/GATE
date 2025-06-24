@@ -1,13 +1,10 @@
 import axios from "axios";
 
-const isProduction = process.env.NODE_ENV === "production";
-
-let baseURL;
-if (isProduction) {
-  baseURL = "/api";
-} else {
-  baseURL = "http://8.215.100.141:5000/api";
-}
+const baseURL =
+  process.env.REACT_APP_API_URL ||
+  (process.env.NODE_ENV === "production"
+    ? "/api"
+    : "http://localhost:5000/api");
 
 const api = axios.create({
   baseURL,
