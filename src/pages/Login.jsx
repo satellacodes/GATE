@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast"; // Tambahkan impor ini
+import api from "@/services/api"; // Tambahkan impor ini
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -35,7 +37,11 @@ const Login = () => {
           errorMessage = "Endpoint API tidak ditemukan";
         } else if (err.response.data?.error) {
           errorMessage = err.response.data.error;
+        } else if (err.response.status === 401) {
+          errorMessage = "Autentikasi gagal";
         }
+      } else if (err.message) {
+        errorMessage = err.message;
       }
 
       setError(errorMessage);
