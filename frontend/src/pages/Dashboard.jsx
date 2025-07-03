@@ -79,7 +79,7 @@ const Dashboard = () => {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 10000); // Refresh setiap 20 detik
+    const interval = setInterval(fetchData, 60000); // Refresh setiap 1 menit
     return () => clearInterval(interval);
   }, []);
 
