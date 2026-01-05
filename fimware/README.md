@@ -1,12 +1,8 @@
 ---
-
-```markdown
-# ESP32 Firmware  
+# ESP32 Firmware
 GateKeeper IoT Hardware Controller
 
 This directory contains firmware for the **ESP32** used to control and monitor the gate system.
-```
-
 ---
 
 ## 🧠 Firmware Responsibilities
