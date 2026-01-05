@@ -10,6 +10,10 @@
   <img src="assets/logo-c.png" alt="C Language" height="40"/>
 </p>
 
+<p align="center">
+  <img src="assets/logoGATE.png" alt="GateKeeper IoT" width="900"/>
+</p>
+
 ---
 
 ## 📌 Overview
@@ -169,3 +173,7 @@ npm run dev
 - Password hashing with bcrypt
 - Recommended HTTPS for production
 - Secure MQTT configuration advised
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
