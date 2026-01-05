@@ -108,7 +108,6 @@ The complete **Software Requirements Specification (SRS)** document is included 
 ### Hardware
 
 - ESP32 Gen 1
-- ESP32-CAM
 - Ultrasonic Sensor (HC-SR04)
 - DC Motor + Motor Driver
 
@@ -135,33 +134,34 @@ The complete **Software Requirements Specification (SRS)** document is included 
 ```bash
 git clone <repository-url>
 cd gatekeeper-iot
-'''
+```
 
 ### Environment Variables
 
-Copy .env.example → .env for:
+- Copy .env.example → .env for:
+- frontend/
+- backend/
 
-frontend/
+### Run Backed
 
-backend/
-
-###3️⃣ Run Backed
+```bash
 cd backend
 docker compose up -d
-
+```
 
 This will:
 
-Start backend service
+- Start backend service
+- Initialize PostgreSQL
+- Create database schema automatically
 
-Initialize PostgreSQL
+### Run Frontend
 
-Create database schema automatically
-
-###4️⃣ Run Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 ### 🔐 Security Notes
 
@@ -169,5 +169,3 @@ npm run dev
 - Password hashing with bcrypt
 - Recommended HTTPS for production
 - Secure MQTT configuration advised
-
-```
