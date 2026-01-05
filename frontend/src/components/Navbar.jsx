@@ -19,7 +19,7 @@ const Navbar = ({ toggleSidebar }) => {
             </button>
             <div className="ml-4 flex items-center">
               <span className="text-xl font-bold text-gray-800">
-                Ponpes Gate
+                GateKeeper
               </span>
             </div>
           </div>

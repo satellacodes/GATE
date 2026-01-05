@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, toggle }) => {
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-4 border-b">
-            <div className="text-xl font-bold text-gray-800">Ponpes Gate</div>
+            <div className="text-xl font-bold text-gray-800">Gate Keeper</div>
             <button
               onClick={toggle}
               className="md:hidden text-gray-500 hover:text-gray-700"
