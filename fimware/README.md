@@ -1,11 +1,11 @@
 ---
 
-
 ```markdown
 # ESP32 Firmware  
 GateKeeper IoT Hardware Controller
 
 This directory contains firmware for the **ESP32** used to control and monitor the gate system.
+```
 
 ---
 
@@ -62,29 +62,37 @@ idf.py set-target esp32
 idf.py menuconfig
 idf.py build
 idf.py flash monitor
+```
 
-Option 3️⃣ esptool.py (Binary Flash)
+### Option 3️⃣ esptool.py (Binary Flash)
+
+```bash
 esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 firmware.bin
+```
 
-⚙️ Configuration Example
+### ⚙️ Configuration Example
+
+```bash
 #define WIFI_SSID "your_wifi"
 #define WIFI_PASSWORD "your_password"
 #define BACKEND_URL "http://your-backend-ip/api/esp"
 #define DEVICE_ID "gate-esp32-01"
-
-⚠️ Important Notes
-* Do not power motors directly from ESP32
-* Use logic level shifter for ultrasonic sensor echo pin
-* Secure firmware credentials before production
-* OTA update is recommended for future improvements
-
-📡 Communication
-* Protocol: HTTP / MQTT
-* Data Sent:
-    * Distance
-    * Image
-    * Device ID
-* Data Received:
-    * Authorization result
-    * Gate control command
 ```
+
+### ⚠️ Important Notes
+
+- Do not power motors directly from ESP32
+- Use logic level shifter for ultrasonic sensor echo pin
+- Secure firmware credentials before production
+- OTA update is recommended for future improvements
+
+### 📡 Communication
+
+- Protocol: HTTP / MQTT
+- Data Sent:
+  - Distance
+  - Image
+  - Device ID
+- Data Received:
+  - Authorization result
+  - Gate control command

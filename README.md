@@ -138,8 +138,8 @@ The complete **Software Requirements Specification (SRS)** document is included 
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone <repository-url>
-cd gatekeeper-iot
+git clone https://github.com/satellacodes/GATE.git
+cd GATE
 ```
 
 ### Environment Variables
@@ -148,7 +148,7 @@ cd gatekeeper-iot
 - frontend/
 - backend/
 
-### Run Backed
+### Run Backend
 
 ```bash
 cd backend
@@ -160,6 +160,7 @@ This will:
 - Start backend service
 - Initialize PostgreSQL
 - Create database schema automatically
+- Credential user is : admin , pass : admin123
 
 ### Run Frontend
 
