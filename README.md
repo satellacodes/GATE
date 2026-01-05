@@ -5,7 +5,7 @@
 <p align="center">
   <img src="assets/logo-javascript.png" alt="JavaScript" height="40"/>
   <img src="assets/logo-react.png" alt="React" height="40"/>
-  <img src="assets/logo-nodejs.png" alt="Node.js" height="40"/>
+  <img src="assets/logo-nodejs.svg" alt="Node.js" height="40"/>
   <img src="assets/logo-postgresql.png" alt="PostgreSQL" height="40"/>
   <img src="assets/logo-c.png" alt="C Language" height="40"/>
 </p>
