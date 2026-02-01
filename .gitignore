@@ -4,4 +4,4 @@ backend/.env
 frontend/.env
 frontend/package-lock.json
 backend.zip
-
+frontend/build
