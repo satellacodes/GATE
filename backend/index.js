@@ -10,7 +10,7 @@ const corsOptions = {
     "https://ambatukammmmmmBUKBUBKUBK.vercel.app", // Domain frontend Vercel
     "http://localhost:3000", // yor local production
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   exposedHeaders: ["Authorization"],
   credentials: true,
@@ -29,7 +29,8 @@ db.sequelize
   .authenticate()
   .then(async () => {
     console.log("Database connected");
-    await db.sequelize.sync({ force: false });
+    await db.sequelize.sync({ alter: true });
+    console.log("Database synced");
 
     const adminCount = await db.Admin.count();
     if (adminCount === 0) {
@@ -40,6 +41,7 @@ db.sequelize
       });
       console.log("Default admin created: username=admin, password=admin123");
     }
+    await initSchedules();
   })
   .catch((err) => console.error("Database connection error:", err));
 
@@ -93,8 +95,6 @@ const initSchedules = async () => {
     console.log("Default schedules created");
   }
 };
-
-initSchedules();
 
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/gate", require("./routes/gate.routes"));

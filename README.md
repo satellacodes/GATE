@@ -152,6 +152,7 @@ cd GATE
 
 ```bash
 cd backend
+docker compose build --no-cache
 docker compose up -d
 ```
 
